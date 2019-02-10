@@ -1,4 +1,4 @@
-package com.swindler.uog.structures;
+package com.swindler.uob.structures;
 
 import java.util.Objects;
 

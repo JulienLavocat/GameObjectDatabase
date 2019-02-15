@@ -13,7 +13,7 @@ import javax.sql.rowset.serial.SerialBlob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.swindler.uob.Cfg;
+import com.swindler.uob.configuration.Cfg;
 import com.swindler.uob.structures.GameObject;
 
 public class DB {

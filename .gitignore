@@ -135,3 +135,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/java,maven,eclipse,windows
+
+config.properties
+objects.db

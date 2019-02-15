@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Properties;
 
 public class Cfg {
 	
@@ -33,7 +32,7 @@ public class Cfg {
 		
 		if(Files.exists(path)) return;
 		
-		Properties props = new Properties();
+		OrderedProperties props = new OrderedProperties();
 		
 		props.setProperty("ws_host", "localhost");
 		props.setProperty("ws_port", "80");
@@ -50,7 +49,7 @@ public class Cfg {
 	
 	private static void loadAndValidate() throws FileNotFoundException, IOException, ConfigurationException {
 		
-		Properties props = new Properties();
+		OrderedProperties props = new OrderedProperties();
 		props.load(new FileInputStream(path.toFile()));
 		
 		if(props.isEmpty())	//Shouldn't happen

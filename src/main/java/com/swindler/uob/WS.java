@@ -1,5 +1,6 @@
 package com.swindler.uob;
 
+import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
@@ -12,6 +13,10 @@ import com.swindler.uob.configuration.Cfg;
  * Push request: 1 / objectCount / objectCount * (x / y / z / dataLength / data) -> header length: 1 + 4 = 5 bytes (1 byte for id + 4 bytes of integer object count)
  */
 public class WS extends WebSocketServer {
+	
+	public WS() {
+		super(new InetSocketAddress(Cfg.WS_HOST, Cfg.WS_PORT));
+	}
 	
 	@Override
 	public void onOpen(WebSocket conn, ClientHandshake handshake) {

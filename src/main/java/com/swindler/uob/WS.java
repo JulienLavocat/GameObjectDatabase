@@ -1,9 +1,12 @@
 package com.swindler.uob;
 
+import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
+
+import com.swindler.uob.configuration.Cfg;
 
 /*
  * Find request: 0 / x1 / y1 / x1 / x2 -> total length: 1 + 4 * 4 = 17 bytes (1 byte for id + 16 bytes of float coordinates)
@@ -11,11 +14,15 @@ import org.java_websocket.server.WebSocketServer;
  */
 public class WS extends WebSocketServer {
 	
+	public WS() {
+		super(new InetSocketAddress(Cfg.WS_HOST, Cfg.WS_PORT));
+	}
+	
 	@Override
 	public void onOpen(WebSocket conn, ClientHandshake handshake) {
 		try {
 
-			if(!Utils.splitQuery(handshake.getResourceDescriptor().substring(2)).get("token").equals(Cfg.ACCESS_TOKEN))
+			if(!Utils.splitQuery(handshake.getResourceDescriptor().substring(2)).get("token").equals(Cfg.WS_ACCESS_KEY))
 				throw new Exception("Invalid access token");
 			else
 				conn.send("Connected to UnityObjectDatabase");
@@ -67,7 +74,8 @@ public class WS extends WebSocketServer {
 
 	@Override
 	public void onStart() {
-		System.out.println("Unity Object Database started");
+		Main.logOnMain("WebSocket listenning on " + getAddress().getHostName() + ":" + getPort());
+		Main.logOnMain("UnityObjectDatabase started");
 	}
 
 }

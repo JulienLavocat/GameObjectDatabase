@@ -74,7 +74,8 @@ public class WS extends WebSocketServer {
 
 	@Override
 	public void onStart() {
-		Main.log.info("WebSocket listenning on " + getAddress().getHostName() + ":" + getPort());
+		Main.logOnMain("WebSocket listenning on " + getAddress().getHostName() + ":" + getPort());
+		Main.logOnMain("UnityObjectDatabase started");
 	}
 
 }

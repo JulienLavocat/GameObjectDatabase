@@ -21,4 +21,8 @@ public class Main {
 		
 	}
 
+	public static void logOnMain(String string) {
+		log.info(string);
+	}
+
 }

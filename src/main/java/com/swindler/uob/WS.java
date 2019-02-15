@@ -7,7 +7,7 @@ import org.java_websocket.server.WebSocketServer;
 
 /*
  * Find request: 0 / x1 / y1 / x1 / x2 -> total length: 1 + 4 * 4 = 17 bytes (1 byte for id + 16 bytes of float coordinates)
- * Push request: 1 / objectCount / objectCount * (x / y / dataLength / data) -> header length: 1 + 4 = 5 bytes (1 byte for id + 4 bytes of integer object count)
+ * Push request: 1 / objectCount / objectCount * (x / y / z / dataLength / data) -> header length: 1 + 4 = 5 bytes (1 byte for id + 4 bytes of integer object count)
  */
 public class WS extends WebSocketServer {
 	

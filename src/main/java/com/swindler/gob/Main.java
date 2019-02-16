@@ -1,14 +1,14 @@
-package com.swindler.uob;
+package com.swindler.gob;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.swindler.uob.configuration.Cfg;
-import com.swindler.uob.database.DB;
+import com.swindler.gob.configuration.Cfg;
+import com.swindler.gob.database.DB;
 
 public class Main {
 
-	public static final Logger log = LoggerFactory.getLogger("UOB");
+	public static final Logger log = LoggerFactory.getLogger("GOB");
 	
 	public static void main(String[] args) throws Exception {
 		

@@ -1,4 +1,4 @@
-package com.swindler.uob.database;
+package com.swindler.gob.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,8 +13,8 @@ import javax.sql.rowset.serial.SerialBlob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.swindler.uob.configuration.Cfg;
-import com.swindler.uob.structures.GameObject;
+import com.swindler.gob.configuration.Cfg;
+import com.swindler.gob.structures.GameObject;
 
 public class DB {
 
@@ -22,7 +22,7 @@ public class DB {
 	private static PreparedStatement FIND;
 	private static PreparedStatement PUSH;
 	
-	private static Logger log = LoggerFactory.getLogger("UOB");
+	private static Logger log = LoggerFactory.getLogger("GOB");
 	
 	public static void start() throws SQLException {
 

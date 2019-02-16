@@ -1,4 +1,4 @@
-package com.swindler.uob.database;
+package com.swindler.gob.database;
 
 public class Queries {
 

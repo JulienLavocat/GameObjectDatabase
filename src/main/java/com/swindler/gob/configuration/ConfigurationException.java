@@ -1,4 +1,4 @@
-package com.swindler.uob.configuration;
+package com.swindler.gob.configuration;
 
 public class ConfigurationException extends Exception {
 

@@ -1,4 +1,4 @@
-package com.swindler.uob.structures;
+package com.swindler.gob.structures;
 
 public class GameObject {
 

@@ -1,4 +1,4 @@
-package com.swindler.uob.configuration;
+package com.swindler.gob.configuration;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -49,9 +49,9 @@ public class Cfg {
 		props.setProperty("db_password", "");
 		//props.setProperty("db_jdbc_url", "");
 
-		props.store(new FileOutputStream(path.toFile()), "UnityObjectDatabase default configuration.");
+		props.store(new FileOutputStream(path.toFile()), "GameObjectDatabase default configuration.");
 
-		log.info("Configuration file created, you should edit it and then start again UnityObjectDatabase.");
+		log.info("Configuration file created, you should edit it and then start again GameObjectDatabase.");
 		log.info("Closing application, edit the newly created configuration file.");
 		
 		System.exit(1);

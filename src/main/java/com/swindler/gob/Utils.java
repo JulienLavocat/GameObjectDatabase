@@ -1,4 +1,4 @@
-package com.swindler.uob;
+package com.swindler.gob;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

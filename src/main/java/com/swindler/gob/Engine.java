@@ -1,12 +1,12 @@
-package com.swindler.uob;
+package com.swindler.gob;
 
 import java.nio.ByteBuffer;
 
-import com.swindler.uob.structures.GameObject;
+import com.swindler.gob.structures.GameObject;
 
 /**
  * Used to serve PUSH and FIND request
- * @author Julien
+ * @author Julien Lavocat
  *
  */
 public class Engine {

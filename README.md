@@ -1,3 +1,4 @@
+
 # UnityObjectDatabase
 Database to store Unity GameObject
 
@@ -30,20 +31,44 @@ Pushing new objects could be an expensive process as it is done a single-threade
 ## Write your own client
 
 UnityObject database communicate using WebSocket and protocol is quite simple.
+Unlike most websockets api, UOB communicates using binary 
 
 ### Connecting and authenticating to UnityObject Database
 Connecting to UOB is made using the following endpoint : `ws://<host address>:<port>/?token=<access key>`.
 Connection request that does not contains token field or ones that does not match it are rejected and client is disconnected.
 
+### Serialized GameObject format
+name|x|y|z|dataLength|data|
+--|--|--|--|--|--|
+**type**|float|float|float|integer|byte[]
+
 ### Push request
 
 Push requests are used to save new objects to the database.
+Request composition :
+
+name|id|object count|objects|
+--|--|--|--|--|--|
+**type**|byte|integer|GameObject[]|
+**value**|0|?|objectCount * GameObject|
 
 ### Find between request
 
 Find between is a type of request that takes two 2D points and find all objects between them.
+Request composition :
+
+name|id|position1.x|position1.y|position2.x|position2.z
+--|--|--|--|--|--|
+**type**|byte|float|float|float|float|
+**value**|1| ?|?|?|?|
+
 
 ### Find around request
 
 Find around is a type of request that takes a center point and a radius. It'll beinterpreted as a find between by the database.
-These requests are not mandatory for a client implementation, they are for convinience.
+These request are for convinience and are not mandatory for a client.
+Request composition : 
+name|id|position1.x|position1.y|radius
+--|--|--|--|--|
+**type**|byte|float|float|float|
+**value**|2|?|?|?|

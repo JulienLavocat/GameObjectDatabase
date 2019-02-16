@@ -26,6 +26,16 @@ Now download one of the supported clients (see [here](https://github.com/JulienL
 
 ## Configuration
 
+| Option | Description |
+|--|--|
+| ws_host | Address to listen on (WebSocket) |
+| ws_port | Port to listen on (WebSocket) |
+| ws_accesskey | Access key to authenticate WebSocket connections |
+| db_host | Database host address |
+| db_port | Database port |
+| db_user | Database user |
+| db_password | Database user password |
+
 ## Pushing new objects to database
 
 Pushing new objects could be an expensive process as it is done a single-threaded way in order to avoid any kind of data-corruption and object are replaced. You shouldn't make a push request every time a new object is created or destroyed, instead keep updated objects in a list and push them every x seconds to the database (30 to 60 seconds by example).

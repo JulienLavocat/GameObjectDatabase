@@ -44,7 +44,7 @@ name|x|y|z|dataLength|data|
 
 ### Push request
 
-Push requests are used to save new objects to the database.
+Push requests are used to save new objects to the database.  
 Request composition :
 
 name|id|object count|objects|
@@ -54,8 +54,8 @@ name|id|object count|objects|
 
 ### Find between request
 
-Find between is a type of request that takes two 2D points and find all objects between them.
-Request composition :
+Find between is a type of request that takes two 2D points and find all objects between them.  
+Request composition :  
 
 name|id|position1.x|position1.y|position2.x|position2.z
 --|--|--|--|--|--|
@@ -66,8 +66,8 @@ name|id|position1.x|position1.y|position2.x|position2.z
 ### Find around request
 
 Find around is a type of request that takes a center point and a radius. It'll beinterpreted as a find between by the database.
-These request are for convinience and are not mandatory for a client.
-Request composition : 
+These request are for convinience and are not mandatory for a client.  
+Request composition :  
 name|id|position1.x|position1.y|radius
 --|--|--|--|--|
 **type**|byte|float|float|float|
